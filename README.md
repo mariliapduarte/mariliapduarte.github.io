@@ -10,7 +10,7 @@ Curso de programador web.
 ### Front-end
 - HTML
 - CSS
-- JS
+- JavaScript
 
 ### Back-end
 - PHP
