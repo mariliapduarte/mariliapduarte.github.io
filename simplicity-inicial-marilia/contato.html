@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Simplicity</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="limitador">
+            <h1><a href="index.html">Simplicity</a></h1>
+            <nav>
+                <h2><a href="">Menu &equiv; </a></h2>
+
+                <ul id="links-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>     
+        
+        <article class="conteudo limitador">
+           
+            <h2>Contato</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum, maxime et consequatur architecto perspiciatis impedit ullam. Facilis sapiente magni accusantium consectetur qui omnis, consequatur autem iusto sunt tenetur id!</p>
+            
+            <p>Incidunt illum, voluptatem reprehenderit quibusdam minus temporibus rem fugiat odit earum ipsum ratione excepturi quasi fugit suscipit libero, recusandae repellat culpa. Aspernatur natus omnis ad aperiam magnam suscipit, praesentium quasi.</p>
+
+            <!-- form: get para conteúdo como termos de busca/ form: post para coleta de dados (segurança dos dados) -->
+            <form action="" method="post">
+            <div>
+                <label for="nome">Nome:</label> <!-- for = é muito importante ser preenchido por questões de acessibilidade e deve ter a mesmo descrição do ID -->
+                <input placeholder="nome" type="text" name="nome" id="nome" required>   <!-- placeholder é usado para descrever o campo para o usuário (opcional) -->
+
+                <!-- para campos obrigatórios colocar "required" dentro das tags input ou select -->
+            </div> 
+            <div>
+                <label for="email">E-mail:</label> 
+                <input type="email" name="email" id="email">     
+            </div>      
+            <div>
+                <label for="data">Nascimento:</label> 
+                <input type="date" name="data" id="data">     
+            </div>  
+            <div>
+                <label for="telefone">Telefone:</label> 
+                <input type="tel" name="telefone" id="telefone">     
+            </div>  
+            <div>
+                <label for="idade">Idade:</label> 
+                <input type="number" name="idade" id="idade" min="18" max="120"> 
+            
+            </div>   
+            <div>
+                <p>Sexo:</p>
+                <input type="radio" name="sexo" id="feminino"> <!-- sempre que for radio, o name deve ser igual para todas opções e o ID identifica cada uma -->
+                <label for="feminino">Feminino</label>
+
+                <input type="radio" name="sexo" id="masculino">
+                <label for="masculino">Masculino</label>
+            </div>
+
+            <div>
+                <p>Interesses:</p>
+                <input type="checkbox" name="interesses" id="design">
+                <label for="design">Design</label>
+
+                <input type="checkbox" name="interesses" id="marketing">
+                <label for="marketing">Marketing</label>
+
+                <input type="checkbox" name="interesses" id="programacao">
+                <label for="programacao">Programação</label>
+            </div>
+            
+            <div>
+                <label for="assunto">Assunto</label>
+                <select name="" id="">
+                    <option></option> <!-- deixar vazio propositalmente -->
+                    <option>Dúvidas</option>
+                    <option>Elogio</option>
+                    <option>Reclamação</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="mensagme">Mensagem:</label> <br>
+                <textarea name="mensagem" id="mensagem" cols="25" rows="5"></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+            <!-- também poderia usar:
+            <input type="button" value="Enviar"> -->
+
+            
+        </form>
+        </article>
+        
+    </main>
+
+    <footer>
+        <p>Simplicity é um site fictício desenvolvido educacionalmente
+        <br>Senac Penha - 2022 </p>
+    </footer>
+</body>
+</html>

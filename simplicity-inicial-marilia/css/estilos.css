@@ -1,0 +1,339 @@
+*, *::after, *::before{box-sizing: border-box;}
+
+body {
+    background-color: whitesmoke; /* sempre declarar o fundo branco para não ficar transparente (aqui escolhemos o whitesmoke, porém o original é branco*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* solução para problema de rodapé flutuando: 
+    Etapa 1: collocar o body em modo flex a definir altura minima usando a viewport como referencia */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+/* Estapa 2: fazer o conteudo (main) ocupar todos o espaço necessário ara empurrar o rodapé para baixo */
+main {flex: 1; }
+
+html {font-size: 14px;}
+
+img { max-width: 100%;}
+
+/* --------------------------HEADER E MENU---------------------- */
+
+/* reset de elementos */
+body, h1, h2, h3, p, figure {
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+a {text-decoration: none;}
+
+h1 a {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+}
+
+header { 
+    text-transform: uppercase;
+    background-color: whitesmoke;
+    
+    position: sticky;
+    top: 0;
+     /* position: stiky, fixed (perde a largura, tem efeito colateral), absolute (absolute - relacionar o bloco, se não ele pega toda a tela como ref) - TODOS PRECISAM DE VALORES DE POSICIONAMENTO PARA FUNCIONAR  */
+}
+
+ /* regra para um elemento (no caso, a div), com a classe limitador do header */
+ 
+ header .limitador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .limitador {
+     max-width: 1100px;
+     margin: auto;
+     width: 95%;
+}
+
+ nav h2{ text-align: right;}
+ nav h2 a{
+     color: black;
+     font-size: 1.2rem;
+     padding: 1rem;
+     display: inline-block;
+}
+ nav h2 a:hover, 
+ nav h2 a:focus,
+ #links-menu a:hover,
+ #links-menu a:focus {
+     background-color: gainsboro;
+}
+
+ #links-menu {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+   
+     display: none;  /* propriedade é utilizada quando o menu estiver pronto JS */
+}
+
+#links-menu a {
+    color: black;
+    font-weight: bold;
+    
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#links-menu.aberto { /* SELETOR SUPER ESPECIFICO - precisa colocar as classes ou ID+class juntas SEM ESPAÇO, para funcionar porteriormente na programação JS*/
+    display: flex; /* aqui usamos o flex para voltar a exibir o menu (quanto aberto) */
+    /* fazemos com o que o link apareça verticalmente */
+    flex-direction: column;
+
+    /* usamos position e as coordenadas para garantir o posicionamento correto do menu quando aberto */
+    position: absolute;
+    right: 0;
+    left: 0;
+
+}
+
+/* --------------------------DESTAQUE---------------------- */
+
+.destaque {
+    background-image: url(../imagens/fundo-destaque.jpg);
+    color: white;
+    height: 85vh;
+    
+    /* as medidas VH - viewport height (altura da área útil do navegador) e WH (largura) - viewport weight - uteis para o design responsivo */
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center; /* alinha o conteúdo */
+
+}
+
+/* sem a definição de tamanho, o flex wrap não funciona */
+.destaque h2, .destaque p {width: 100%;}
+
+.destaque h2 {
+    /* ajuste de fonte responsivo usando a função CLAMP (minimo, ideal, máximo) */
+    font-size: clamp(2rem, 10vw, 7rem);
+
+    /* Etapa 2: chamar e configurar a animação */
+    animation-name: aparecer;
+    animation-duration: 3s;
+    /* animation-iteration-count: infinite;
+    animation-direction: alternate-reverse; */
+}
+
+.destaque p {
+    font-size: clamp(1.5rem, 3vw, 3.5rem);
+    font-weight: bold;
+
+    /* sintaxe COMPLETA 
+    animation-name: aparecer;
+    animation-duration: 3s;
+    animation-delay: 0.8s;
+    animation-fill-mode: backwards;*/
+
+    /* sintaxe ABREVIADA */
+    animation: aparecer 3s 2s backwards;
+
+}
+
+/* Estapa 1: regra de animação */
+@keyframes aparecer {               /* fadeIn */
+    from { 
+        opacity: 0; 
+        transform: translateY(-100vh);
+    }           
+    to { 
+        opacity: 1; 
+        transform: translateY(0px);
+    }             
+}
+
+.front-end,
+.historia,
+.localizacao { text-align: center; }
+
+article h2 { padding: 1rem; }
+
+article p { padding: 0.5rem 0; }
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+    background-size: cover;    
+}
+
+.historia h2 {
+    color: white;
+    text-shadow: black 1px 1px 5px;
+}
+
+.historia iframe { 
+    width: 100%;
+    max-width: 700px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 15vh;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Regras para o conteúdo das páginas: Produtos, Serviços e Contato */
+.conteudo {
+    background-color: rgb(236, 236, 236);
+    padding: .7rem; /* ou 0.7rem */
+    border-radius: 7px;
+}
+
+.conteudo h2 { text-align: center; }
+
+table, th, td {
+    border: solid 2px black;
+
+    /* Remove os espaços entre
+    as bordas */
+    border-collapse: collapse;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    max-width: 600px;
+}
+
+caption {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+}
+
+th {
+    background-color: black;
+    color: white;
+    font-size: 1.3rem;
+    padding: .5rem;
+}
+
+td {
+    /* background-color: white; */
+    font-size: 1.2rem;
+}
+
+/* Formatando os últimos td's */
+td:last-child { 
+    font-weight: bold; 
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* Formatando os primeiros td's */
+td:first-child { text-transform: uppercase; }
+
+/* Formatando os "segundos" td's */
+td:nth-child(2) { text-align: center; }
+
+/* even: par  - odd: ímpar */
+tr:nth-child(odd) { background-color: #ccc; }
+
+form {
+    background-color: rgb(228, 226, 221);
+    width: 95%;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+input:not([type=radio]):not([type=checkbox]), select, textarea {/* criando excessões no CSS: usando pseudo classes ":not([type=xxx]) estamos pegando tudo o que envolve input, exceto radio e checkbox ;)*/
+    border: none;
+    padding: 1%;
+    width: 100%;
+    height: 40px;
+    box-shadow: black 0 0 2px;
+}
+
+textarea {height: auto;}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+
+form div { margin-top: 1rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 530px) {
+    nav { width: 70%; }
+    nav h2 { display: none; }
+    #links-menu { display: flex; }
+    #links-menu li { width: 100%; }
+}
+
+@media screen and (min-width: 800px) {
+    html { font-size: 18px; }
+    header .limitador { height: 15vh; }
+    .destaque { height: 85vh; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
