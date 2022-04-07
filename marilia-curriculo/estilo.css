@@ -20,16 +20,7 @@ div {
 }
 
 
-h1{
-    
-    font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
-    padding: 22px;
-    font-weight: bold;
-    text-shadow: rgb(51, 0, 0) 0 0 5px;
-    
-}
+
 
 h2 {
     text-align: center;
@@ -39,22 +30,10 @@ h2 {
 
 h3 { text-shadow: rgb(59, 9, 9) 0 0 2px;}
 
-#objetivo, #fomacao-academica {
+#objetivo, #fomacao-academica, #apresentacao {
     text-align: center;
     padding: 20px;
     
-}
-
-#apresentacao {
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-}
-
-#apresentacao p {
-    display: block;
-    text-align: center;
-    align-content: center;
 }
 
 
@@ -63,11 +42,33 @@ p {
     
 }
 
-
-
+ 
 img {
     margin: auto;
-    max-width: 25%;
+    max-width: 70%;
 }
 
 
+@media screen and (min-width: 1170px) {
+    img {max-width: 40%;
+    text-align: center; }
+    #apresentacao { display: flex;
+        align-content: center;
+        justify-content: space-between;}
+    
+        h1{
+    
+            font-size: 3rem;
+            font-weight: normal;
+            text-align: center;
+            padding: 22px;
+            font-weight: bold;
+            text-shadow: rgb(51, 0, 0) 0 0 5px;
+            
+        }
+        #apresentacao p {
+            display: block;
+            text-align: center;
+            align-content: center;
+        }
+}
