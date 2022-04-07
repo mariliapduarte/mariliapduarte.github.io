@@ -46,7 +46,7 @@ img {
 }
 
 h1{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: normal;
     padding: 22px;
     font-weight: bold;
@@ -57,7 +57,7 @@ h1{
 
 @media screen and (min-width: 1170px) {
     img {max-width: 25%;
-        text-align: center; }
+        text-align: center;}
 
     #apresentacao { display: flex;
         align-content: center;
@@ -68,9 +68,6 @@ h1{
         text-align: center;
         align-content: center;
         }
-    div {
-        padding: 100px;
-          
-            
-        }
+    div {padding: 100px;}
+    h1 {font-size: 3rem;}
 }
