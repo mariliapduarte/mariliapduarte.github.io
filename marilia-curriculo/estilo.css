@@ -1,0 +1,73 @@
+*, *::after, *::before{box-sizing: border-box;}
+
+body, h1, h2, h3, p, figure {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body { 
+    margin: auto;
+    padding: 80px;
+   background-color: rgb(49, 0, 0);
+}
+
+div {
+    background-color: rgb(255, 255, 255);
+    padding: 100px;
+  
+    
+}
+
+
+h1{
+    
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: center;
+    padding: 22px;
+    font-weight: bold;
+    text-shadow: rgb(51, 0, 0) 0 0 5px;
+    
+}
+
+h2 {
+    text-align: center;
+    padding: 15px;
+    text-shadow: rgb(39, 10, 10) 0 0 2px;
+}
+
+h3 { text-shadow: rgb(59, 9, 9) 0 0 2px;}
+
+#objetivo, #fomacao-academica {
+    text-align: center;
+    padding: 20px;
+    
+}
+
+#apresentacao {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+#apresentacao p {
+    display: block;
+    text-align: center;
+    align-content: center;
+}
+
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+
+
+img {
+    margin: auto;
+    max-width: 25%;
+}
+
+
