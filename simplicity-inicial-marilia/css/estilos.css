@@ -171,7 +171,10 @@ header {
 
 .front-end,
 .historia,
-.localizacao { text-align: center; }
+.localizacao {
+     text-align: center;
+     padding: 50px; 
+     }
 
 article h2 { padding: 1rem; }
 
@@ -180,7 +183,8 @@ article p { padding: 0.5rem 0; }
 .historia {
     background-image: url(../imagens/fundo-madeira.jpg);
     background-attachment: fixed;
-    background-size: cover;    
+    background-size: cover;  
+     
 }
 
 .historia h2 {
