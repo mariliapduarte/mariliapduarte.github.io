@@ -70,10 +70,16 @@ textMensagem.addEventListener("input", function (){
     let contagem = quantidade - conteudo.length;
 
     //Add a contagem ao elemento HTML
-    bCaracteres.textContent = contagem
+    bCaracteres.textContent = contagem;
+    
+    if (contagem == 0) {
+        bCaracteres.style.color = "red"; 
+        textMensagem.style.boxShadow = "red 0 0 10px"
+    } else {
+        bCaracteres.style.color = "black"; 
+        textMensagem.style.boxShadow = "black 0 0 10px"
 
-
-
+        
+    }
 });
-
 
