@@ -6,10 +6,15 @@ botao.addEventListener("click", function(event){
 
     linksMenu.classList.toggle("aberto");
     
-
-
-
-
-
-
+    if ( linksMenu.classList.contains("aberto") ) {
+        icone.innerHTML = "Fechar &times;";
+    } else {
+        icone.innerHTML = "Menu &equiv;";
+    }
 });
+
+
+
+
+
+
