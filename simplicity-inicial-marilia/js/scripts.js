@@ -8,6 +8,7 @@ const inputCidade = formulario.querySelector("#cidade");
 const inputEstado = formulario.querySelector("#estado");
 const bStatus = formulario.querySelector("#status");
 const botaoLocalizar = formulario.querySelector("#localizar-cep");
+const inputCelular = formulario.querySelector("#celular");
 
 botaoLocalizar.addEventListener("click", function (event){
     event.preventDefault();
@@ -34,7 +35,20 @@ botaoLocalizar.addEventListener("click", function (event){
             } else {
                 bStatus.innerHTML = "CEP encontrado!";
                 inputEndereco.value = dados.logradouro;
+                inputBairro.value = dados.bairro;
+                inputCidade.value = dados.localidade;
+                inputEstado.value = dados.uf;
+            }
 
                 
             });
 });
+
+
+/*  estamos utilizando a LIB VanillaMasker - https://github.com/vanilla-masker/vanilla-masker  - para melhorar nossa resposta a função de busca de CEP*/
+VMasker(inputCep).maskPattern("99999-999")
+VMasker(inputTelefone).maskPattern("(99) 9999-9999")
+VMasker(inputCelular).maskPattern("(99) 9-9999-9999")
+
+
+
