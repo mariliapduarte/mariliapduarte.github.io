@@ -124,8 +124,10 @@
             </div>
             
             <div>
-                <label for="mensagme">Mensagem:</label> <br>
-                <textarea name="mensagem" id="mensagem" cols="25" rows="5"></textarea>
+                <label for="mensagem">Mensagem: 
+                    <span id="maximo"> (restam <b id="caracteres">100</b> caracteres)</span>
+                </label> <br>
+                <textarea maxlength="100" name="mensagem" id="mensagem" cols="25" rows="5"></textarea>
             </div>
 
             <button type="submit">Enviar</button>

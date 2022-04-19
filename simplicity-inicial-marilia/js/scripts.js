@@ -46,9 +46,34 @@ botaoLocalizar.addEventListener("click", function (event){
 
 
 /*  estamos utilizando a LIB VanillaMasker - https://github.com/vanilla-masker/vanilla-masker  - para melhorar nossa resposta a função de busca de CEP*/
-VMasker(inputCep).maskPattern("99999-999")
-VMasker(inputTelefone).maskPattern("(99) 9999-9999")
-VMasker(inputCelular).maskPattern("(99) 9-9999-9999")
 
+VMasker(inputCep).maskPattern("99999-999");
+VMasker(inputTelefone).maskPattern("(99) 9999-9999");
+VMasker(inputCelular).maskPattern("(99) 9-9999-9999");
+
+
+//Programação do contador de caracteres do campo mensagem
+const spanMaximo = formulario.querySelector("#maximo");
+const bCaracteres = formulario.querySelector("#caracteres");
+const textMensagem = formulario.querySelector("#mensagem");
+
+/* Objetivo da variavel é determinar a quantidade max de caracteres do campo "mensagem" */
+let quantidade = 100;
+
+//Evento para detectar a digitação (entrada) no campo
+textMensagem.addEventListener("input", function (){
+   
+    //capturando o que foi digitado
+    let conteudo = textMensagem.value;
+
+    //contagem regressiva
+    let contagem = quantidade - conteudo.length;
+
+    //Add a contagem ao elemento HTML
+    bCaracteres.textContent = contagem
+
+
+
+});
 
 
