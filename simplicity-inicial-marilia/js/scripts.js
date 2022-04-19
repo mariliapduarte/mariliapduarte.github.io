@@ -13,8 +13,28 @@ botaoLocalizar.addEventListener("click", function (event){
     event.preventDefault();
     //Entrar no site viacep.com.br
 
-    /* Pegar o CEP digitad */
+    /* Pegar o CEP digitado */
     let cep = inputCep.value;
-    let url = "https://viacep.com.br/ws/01001000/json/"
+    let url = `https://viacep.com.br/ws/${cep}/json/`;
+    console.log(url);
 
-})
+    /* Ajax: comunicação assíncrona (os processos ocorrem paralelamente) com o Viacep usando a função chamada fetch */
+
+    // 1) Fazer a conexão com a API (ou acessar)
+    fetch(url)
+
+        //2) Então, recupere a resposta de acesso no formato jason
+        .then(resposta => resposta.json()) 
+
+            //3) Então, mostre os dados
+            .then(dados => {
+                if( "erro" in dados ) {
+                bStatus.innerHTML = "CEP não encontrado!"
+                inputCep.focus();
+            } else {
+                bStatus.innerHTML = "CEP encontrado!";
+                inputEndereco.value = dados.logradouro;
+
+                
+            });
+});
