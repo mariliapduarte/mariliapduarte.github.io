@@ -40,7 +40,7 @@
             <p>Incidunt illum, voluptatem reprehenderit quibusdam minus temporibus rem fugiat odit earum ipsum ratione excepturi quasi fugit suscipit libero, recusandae repellat culpa. Aspernatur natus omnis ad aperiam magnam suscipit, praesentium quasi.</p>
 
             <!-- form: get para conteúdo como termos de busca/ form: post para coleta de dados (segurança dos dados) -->
-            <form action="" method="post">
+            <form id="my-form" action="https://formspree.io/f/mzbojwnv" method="post">
             <div>
                 <label for="nome">Nome:</label> <!-- for = é muito importante ser preenchido por questões de acessibilidade e deve ter a mesmo descrição do ID -->
                 <input placeholder="nome" type="text" name="nome" id="nome" required>   <!-- placeholder é usado para descrever o campo para o usuário (opcional) -->
@@ -133,6 +133,8 @@
             <button type="submit">Enviar</button>
             <!-- também poderia usar:
             <input type="button" value="Enviar"> -->
+
+            <p id="my-form-status"></p>
 
             
         </form>
